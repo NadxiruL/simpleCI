@@ -8,6 +8,7 @@ class Home extends BaseController
 	{
 
 		// ketika method ini dipanggil , method ini akan memanggil welcome_massage.php di dalam folder views.
+		//      Views/welcome_message.php
 		 return view('welcome_message');
 	}
 }

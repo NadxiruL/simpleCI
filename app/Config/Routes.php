@@ -32,8 +32,17 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+
+//jika ada orang akses bawa kan ke controller Home , method index
+			//root(localhost:8080)
+$routes->get('/', 'Pages::index');
 //membuat jalan ketika method get ditekan , arahkan ke controller home halaman index .
+
+//$routes->get('/cuba', 'Cuba::hello');
+// $routes->get('/test/(:any)/(:num)' , 'Test::hello/$1/$2');
+// $routes->get('/users', 'Admin\Users::index');
+
+
 
 /*
  * --------------------------------------------------------------------
