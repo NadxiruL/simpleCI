@@ -42,6 +42,8 @@ $routes->get('/', 'Pages::index');
 // $routes->get('/test/(:any)/(:num)' , 'Test::hello/$1/$2');
 // $routes->get('/users', 'Admin\Users::index');
 
+$routes->get('/book/(:segment)', 'Product::detail/$1');
+
 
 
 /*

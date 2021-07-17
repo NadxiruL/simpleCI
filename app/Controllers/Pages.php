@@ -12,11 +12,11 @@ class Pages extends BaseController
             'title' => 'Home'
         ];
 
-        echo view('layout/header' , $data);
+      
                //code igniter akan mencari file home.php dalam folder views..
-        return view('pages/home');
+        return view('pages/home', $data);
 
-        echo view('layout/footer');
+   
 
 	}
 
@@ -27,13 +27,25 @@ class Pages extends BaseController
 
             'title' => 'About'
         ];
-        echo view('layout/header', $data);
+     
                //code igniter akan mencari file about.php dalam folder views..
-        echo view('pages/about');
+        return view('pages/about', $data);
 
-        echo view('layout/footer');
+       
 
 	}
+
+
+    public function contact() {
+
+        $data = [
+
+          'title' => 'Contact Us'  
+        ];
+
+        return view('pages/contact', $data);
+
+    }
 
 }
 

@@ -1,17 +1,18 @@
+<?= $this->extend('layout/template'); ?>
+
+
+<?= $this->section('content'); ?>
+
 <div class="container">
-<div class="row">
-<div class="col">
+    <div class="row">
+        <div class="col">
 
-<h1>About Me</h1>
+            <h1>About Me</h1>
 
-<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sint quod non recusandae nemo harum perspiciatis nisi similique reiciendis, vero ut soluta excepturi explicabo earum eligendi inventore. Deleniti, vero quasi. </p>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sint quod non recusandae nemo harum perspiciatis nisi similique reiciendis, vero ut soluta excepturi explicabo earum eligendi inventore. Deleniti, vero quasi. </p>
 
-
-
+        </div>
+    </div>
 </div>
 
-
-</div>
-
-
-</div>
+<?= $this->endSection(); ?>
