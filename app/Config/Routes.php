@@ -44,6 +44,8 @@ $routes->get('/', 'Pages::index');
 
 $routes->get('/book/(:segment)', 'Product::detail/$1');
 
+$routes->get('/product/insert', 'Product::insert');
+
 
 
 /*

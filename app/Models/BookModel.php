@@ -9,6 +9,8 @@ class BookModel extends Model
     protected $table = 'book';
     protected $primaryKey = 'book_id';
     protected $useTimestamps = true;
+   
+    protected $allowedFields = ['name' , 'writer' , 'publisher' , 'photo'];
 
     public function getProduct($book_id = false)
     {

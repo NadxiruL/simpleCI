@@ -59,8 +59,46 @@ class Product extends BaseController
 
         ];
 
-        return view ('product/detail' , $data);
+        //jika product tiada dalam table
+
+        /* if (empty($data['product'])) {
+
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Book ' . $book_id . ' not found');
+        }
+
+        return view ('product/detail' , $data); */
        
+    }
+
+
+    public function insert() {
+
+        $data = [
+
+            'title' => 'Insert Product'
+
+        ];
+
+            return view('product/insert', $data);
+
+    }
+
+    public function save(){
+
+        $this->bookModel->save([
+
+            'name' => $this->request->getVar('name'),
+            'writer' => $this->request->getVar('writer'),
+            'publisher' => $this->request->getVar('publisher'),
+            'photo' => $this->request->getVar('photo')
+
+
+        ]);
+
+        session()->setFlashdata('notifications', 'data successfully inserted!');
+
+        return redirect()->to('/product');
+
     }
 
 }

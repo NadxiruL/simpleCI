@@ -5,7 +5,17 @@
 <div class="container" mt-3>
     <div class="row">
         <div class="col">
-            <h1 class="mt-2">Add Product</h1>
+            <h1 class="mt-2">Product List</h1>
+            <a href="/product/insert" class="btn btn-primary mb-3"> Add New Product</a>
+
+            <?php if (session()->getFlashdata('notifications')) : ?>
+
+              <div class="alert alert-success" role="alert">
+              <?= session()->getFlashdata('notifications'); ?>
+              </div>
+
+              <?php endif; ?>
+
         <table class="table">
   <thead>
     <tr>
