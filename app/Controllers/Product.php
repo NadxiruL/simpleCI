@@ -56,26 +56,30 @@ class Product extends BaseController
 
             'title' => 'Book Details',
             'book' => $this->bookModel->getProduct($book_id)
+           
 
         ];
 
         //jika product tiada dalam table
 
-        /* if (empty($data['product'])) {
+       /*  if (empty($data['product'])) {
 
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Book ' . $book_id . ' not found');
-        }
+        } */
 
-        return view ('product/detail' , $data); */
+        return view ('product/detail' , $data); 
        
     }
 
 
     public function insert() {
 
+     
+
         $data = [
 
-            'title' => 'Insert Product'
+            'title' => 'Insert Product',
+            'validation' => \config\Services::validation()
 
         ];
 
@@ -84,6 +88,29 @@ class Product extends BaseController
     }
 
     public function save(){
+
+        if(!$this->validate([
+
+            'name' => [
+                
+                'rules' => 'required|is_unique[book.name]',
+                'errors' => [
+
+                    'required' => '{field} must be filled',
+                    'is_unique' => '{field} is already taken'
+                ]
+
+            ]
+
+        ])) {
+
+            $validation = \Config\Services::validation();
+       
+            return redirect()->to('/product/insert')->withInput()->with('validation', $validation);
+
+        }
+
+
 
         $this->bookModel->save([
 
